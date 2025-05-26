@@ -6,7 +6,7 @@
 Langkah - langkah Backend :
 1. Install Composer
 2. Install CodeIgniter melalui websitenya atau bisa melalui composer dengan :
-#### $ composer create-project kenjis/codeigniter-composer-installer codeigniter ####
+#### composer create-project codeigniter4/appstarter ci-news -vvv ####
 4. Setelah composer dan CI ter-install, running server menggunakan perintah :
    #### PHP SPARK SERVE ###
 
