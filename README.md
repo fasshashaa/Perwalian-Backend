@@ -20,6 +20,7 @@
    Bisa dilakukan melalui Composer dengan perintah:
    ```bash
    composer create-project codeigniter4/appstarter (nama-folder-project) -vvv
+   
    atau melalui website resmi CodeIgniter di : [https://www.codeigniter.com/download]
 3. **Install Postman**
    Postman desktop dapat diunduh melalui website resmi postman yaitu : [https://www.postman.com/downloads/]
