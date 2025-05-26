@@ -1,7 +1,7 @@
 
-# SISTEM PERWALIAN MAHASISWA - Backend
+# SISTEM PERWALIAN MAHASISWA 
 
-## Kelompok 2
+## Kelompok 2 - Backend
 
 Langkah - langkah Backend :
 1. Install Composer
@@ -9,3 +9,5 @@ Langkah - langkah Backend :
   #### $ composer create-project kenjis/codeigniter-composer-installer codeigniter ####
 3. Setelah composer dan CI ter-install, running server menggunakan perintah :
    #### PHP SPARK SERVE ###
+
+## CodeIgniter 3 ##
