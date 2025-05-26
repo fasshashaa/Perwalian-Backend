@@ -11,3 +11,10 @@ Langkah - langkah Backend :
    #### PHP SPARK SERVE ###
 
 ## CodeIgniter 3 ##
+CodeIgniter merupakan framework PHP yang menggunakan MVC ( Model, View, dan Controller ) untuk membangun aplikasi web sederhana hingga kompleks.
+MVC :
+1. Model : Mengelola data dari database
+2. View : Menampilkan data
+3. Controller : Logika Aplikasi untuk menghubungkan controller dan view
+
+
