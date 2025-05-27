@@ -208,6 +208,14 @@ $routes->get('vpertemuan', 'VPertemuanPerwalianController::index');
 $routes->post('register', 'AuthController::register');
 $routes->post('login', 'AuthController::login');
 ```
+   8. Jalankan Server di Terminal
+```bash
+cd C:/laragon/www/(folder-project)
+php spark serve
+```
+---  
+## 🖥️ Testing Postman  
+
 
 
    
