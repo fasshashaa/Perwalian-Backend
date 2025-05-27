@@ -250,6 +250,10 @@ php spark serve
       ![Postman](img/postmanputpertemuan.png)
    - Endpoint Delete : **localhost:8080/pertemuan/id**
       ![Postman](img/postmandeletepertemuan.png)
+
+   ---
+   ### Collection JSON - Postman ###
+   [Collection JSON Postman](https://drive.google.com/drive/folders/1UQJIO4EzZrQOoeZuiUY1OuoGHJOim-na?usp=drive_link)
      
    
 
