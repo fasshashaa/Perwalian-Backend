@@ -215,6 +215,43 @@ php spark serve
 ```
 ---  
 ## 🖥️ Testing Postman  
+1. Login dan Register
+   - Endpoint Login : **localhost:8080/login**    
+     ![PostmanLogin](img/postmanlogin.png)
+   - Endpoint Register : **localhost:8080/register**
+      ![PostmanRegister](img/postmanregister.png)
+     
+2. Dosen
+   - Endpoint Get : **localhost:8080/dosen**
+      ![Postmandosen](img/postmangetdosen.png)
+   - Endpoint Post : **localhost:8080/dosen**
+      ![Postmandosen](img/postmanpostdosen.png)
+   - Endpoint Put : **localhost:8080/dosen/nidn**
+      ![Postmandosen](img/postmanputdosen.png)
+   - Endpoint Delete : **localhost:8080/dosen/nidn**
+      ![Postmandosen](img/postmandeletedosen.png)
+     
+3. Mahasiswa
+   - Endpoint Get : **localhost:8080/mahasiswa**
+      ![Postman](img/postmangetmahasiswa.png)
+   - Endpoint Post : **localhost:8080/mahasiswa**
+      ![Postman](img/postmanpostmahasiswa.png)
+   - Endpoint Put : **localhost:8080/mahasiswa/nim**
+      ![Postman](img/postmanputmahasiswa.png)
+   - Endpoint delete : **localhost:8080/mahasiswa/nim**
+      ![Postman](img/postmandeletemahasiswa.png)
+     
+4. Pertemuan dan Perwalian
+   - Endpoint Get : **localhost:8080/pertemuan**
+      ![Postman](img/postmangetpertemuan.png)
+   - Endpoint Post : **localhost:8080/pertemuan**
+      ![Postman](img/postmanpostpertemuan.png)
+   - Endpoint Put : **localhost:8080/pertemuan/id**
+      ![Postman](img/postmanputpertemuan.png)
+   - Endpoint Delete : **localhost:8080/pertemuan/id**
+      ![Postman](img/postmandeletepertemuan.png)
+     
+   
 
 
 
