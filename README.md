@@ -50,7 +50,7 @@
    Tunggu proses download package selesai dan jika proses selesai maka folder project CodeIgniter berhasil dibuat.
    
 4. Buka folder project CodeIgniter di Visual Studio Code  
-   Buka folder project di **C:/laragon/www/**
+   Buka folder project di : **C:/laragon/www/**
    
 5. Buat Database untuk Uji coba API di lokal  
    Buka phpmyadmin di : [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)  
