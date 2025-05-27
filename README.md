@@ -33,21 +33,25 @@
       ```bash
       php -v
       ```
-      Notes : Untuk meminimalisir kesalahan dan error maka gunakan versi PHP terbaru  
+      Notes : Untuk meminimalisir kesalahan dan error maka gunakan versi PHP terbaru
+     
 2. Pastikan Composer juga telah terinstall  
    Menggunakan perintah :
    ```bash
    composer -v
    ```
    Notes : Composer harus benar benar terinstall agar install CodeIgniter melalui terminal (composer) bisa dilakukan.
+   
 3. Install CodeIgniter menggunakan composer atau terminal
    Buka terminal lalu ketikkan perintah :
     ```bash
    composer create-project codeigniter4/appstarter (nama-folder-project) -vvv
    ```
    Tunggu proses download package selesai dan jika proses selesai maka folder project CodeIgniter berhasil dibuat.
+   
 4. Buka folder project CodeIgniter di Visual Studio Code  
    Buka folder project di **C:/laragon/www/**
+   
 5. Buat Database untuk Uji coba API di lokal  
    Buka phpmyadmin di : [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)  
    Buat database dengan nama : pbfkel22  
@@ -140,155 +144,24 @@
         'pConnect'     => false,
    ```
    Perintah ini akan mengarahkan project ke database yang sudah dibuat yaitu  "pbfkel22".
-7. Buat arsitektur MVC ( Model dan Controller serta Routes )  
-   a. Model  
+   
+7. Buat arsitektur MVC ( Model dan Controller serta Routes )
+   
+a. Model  
    Pada folder **app/Models** buat file model untuk setiap tabel untuk mengelola data dari database.  
-   Buat **UserModel.php** :
-   ```bash
-   <?php
-   namespace App\Models;
-   use CodeIgniter\Model;
-   class UserModel extends Model
-   {
-    protected $table = 'users'; 
-    protected $primaryKey = 'id_user'; 
-    protected $allowedFields = ['username', 'email', 'password', 'role', 'nidn','nim']; 
-    protected $useTimestamps = false;
-   }
-   ```
-   Buat **MahasiswaModel.php** :
-   ```sql
-   <?php
-   namespace App\Models;
-   use CodeIgniter\Model;
-   class MahasiswaModel extends Model
-   {
-    protected $table = 'mahasiswa';  
-    protected $primaryKey = 'nim';  
-    protected $allowedFields = ['nim', 'nama', 'email', 'alamat', 'nidn'];  
-    protected $validationRules = [
-        'nim' => 'required|numeric|is_unique[mahasiswa.nim]',
-        'nama' => 'required|min_length[3]',
-        'email' => 'required|valid_email',
-        'alamat' => 'required',
-        'nidn' => 'required|numeric'
-    ];
-   }
-   ```
-   Buat **dosen_waliModel.php** :
-   ```bash
-   <?php
-   namespace App\Models;
-   use CodeIgniter\Model;
-   class DosenWaliModel extends Model
-   {
-    protected $table = 'dosen_wali';
-    protected $primaryKey = 'nidn';
-    protected $allowedFields = ['nidn', 'nama', 'email']; 
-    protected $useTimestamps = false;
-
-    // Untuk validasi data
-    protected $validationRules = [
-        'nidn'   => 'required|numeric|is_unique[dosen_wali.nidn]',  
-        'nama'   => 'required|min_length[3]',
-        'email'  => 'required|valid_email',
-    ];
-
-    protected $validationMessages = [
-        'nidn' => [
-            'required' => 'NIDN harus diisi',
-            'numeric' => 'NIDN harus berupa angka',
-            'is_unique' => 'NIDN sudah terdaftar',
-        ],
-        'nama' => [
-            'required' => 'Nama harus diisi',
-            'min_length' => 'Nama harus memiliki panjang minimal 3 karakter',
-        ],
-        'email' => [
-            'required' => 'Email harus diisi',
-            'valid_email' => 'Email tidak valid',
-        ]
-      ];
-   }
-
-   ```
-   Buat **NotifikasiModel.php** :
-   ```bash
-   <?php
-   namespace App\Models;
-   use CodeIgniter\Model;
-   class NotifikasiModel extends Model
-   {
-    protected $table      = 'notifikasi';
-    protected $primaryKey = 'id_notifikasi';
-    protected $returnType = 'array';
-    protected $allowedFields = ['tipe', 'tanggal_kirim', 'pesan', 'nim', 'nidn'];
-
-
-    protected $validationRules = [
-        'tipe'         => 'required|string',
-        'tanggal_kirim'=> 'required|valid_date',
-        'pesan'        => 'required|string|min_length[5]',
-        'nim'          => 'required|numeric',
-        'nidn'         => 'required|numeric',
-    ];
-
-    protected $validationMessages = [
-        'tipe' => [
-            'required' => 'Tipe tidak boleh kosong.',
-        ],
-        'tanggal_kirim' => [
-            'valid_date' => 'Tanggal kirim tidak valid.',
-        ],
-        'pesan' => [
-            'min_length' => 'Pesan harus memiliki minimal 5 karakter.',
-        ],
-    ];
-
-    protected $skipValidation = false;
-   }
-   ```
-   Buat **pertemuan_perwalianModel.php** :
-   ```bash
-   <?php
-   namespace App\Models;
-   use CodeIgniter\Model;
-   class PertemuanPerwalianModel extends Model
-   {
-    protected $table      = 'pertemuan_perwalian';
-    protected $primaryKey = 'id_pertemuan';
-    protected $returnType = 'array';
-    protected $allowedFields = ['tanggal', 'topik', 'catatan', 'saran_akademik', 'nim', 'nidn'];
-    protected $validationRules = [
-        'tanggal'         => 'required|valid_date',
-        'topik'           => 'required|string',
-        'catatan'         => 'required|string',
-        'saran_akademik'  => 'required|string',
-        'nim'             => 'required|numeric',
-        'nidn'            => 'required|numeric',
-        'bulan_tahun'     => 'required'
-        
-    ];
-
-    protected $validationMessages = [
-        'tanggal' => [
-            'valid_date' => 'Tanggal tidak valid.',
-        ],
-        'bulan_tahun' => [
-            'regex_match' => 'Bulan dan tahun harus dalam format YYYY-MM.',
-        ]
-    ];
-
-    protected $skipValidation = false;
-   }
-   ```
+   - **UserModel** : [UserModel.php](app/Models/UserModel.php)  
+   - **MahasiswaModel** : [MahasiswaModel.php](app/Models/MahasiswaModel.php)  
+   - **dosen_waliModel** : [DosenWaliModel.php](app/Models/DosenWaliModel.php)  
+   - **NotifikasiModel** : [NotifikasiModel.php](app/Models/NotifikasiModel.php)  
+   - **pertemuan_perwalianModel** : [PertemuanPerwalianModel.php](app/Models/pertemuan_perwalianModel.php)
+   
 b. Controller  
 Pada folder **app/Controllers** buat file controller yang akan mengatur logika dari aplikasi.  
-- **AuthController** : [AuthController.php](app/controller/AuthController.php)  
-- **DosenWaliController** : [DosenWaliController.php](app/controller/DosenWaliController.php)  
-- **MahasiswaController** : [MahasiswaController.php](app/controller/MahasiswaController.php)  
-- **NotifikasiController** : [NotifikasiController.php](app/controller/NotifikasiController.php)   
-- **PertemuanPerwalianController** : [PertemuanPerwalianController.php](app/controller/PertemuanPerwalianController.php)
+- **AuthController** : [AuthController.php](app/Controllers/AuthController.php)  
+- **DosenWaliController** : [DosenWaliController.php](app/Controllers/DosenWaliController.php)  
+- **MahasiswaController** : [MahasiswaController.php](app/Controllers/MahasiswaController.php)  
+- **NotifikasiController** : [NotifikasiController.php](app/Controllers/NotifikasiController.php)   
+- **PertemuanPerwalianController** : [PertemuanPerwalianController.php](app/Controllers/PertemuanPerwalianController.php)
   
 c. Routes  
 Routes digunakan untuk membuat url dan controller dapat terhubung.  
