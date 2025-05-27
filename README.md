@@ -153,7 +153,7 @@ a. Model
    - **MahasiswaModel** : [MahasiswaModel.php](app/Models/MahasiswaModel.php)  
    - **dosen_waliModel** : [DosenWaliModel.php](app/Models/DosenWaliModel.php)  
    - **NotifikasiModel** : [NotifikasiModel.php](app/Models/NotifikasiModel.php)  
-   - **pertemuan_perwalianModel** : [PertemuanPerwalianModel.php](app/Models/pertemuan_perwalianModel.php)
+   - **pertemuan_perwalianModel** : [PertemuanPerwalianModel.php](app/Models/PertemuanPerwalianModel.php)
    
 b. Controller  
 Pada folder **app/Controllers** buat file controller yang akan mengatur logika dari aplikasi.  
